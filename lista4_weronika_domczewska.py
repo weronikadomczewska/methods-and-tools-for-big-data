@@ -13,12 +13,12 @@ temps = np.zeros(n)
 for i in range(n):
     temps[i] = random.randint(-5, 20)
 
-# print(f"Mean: {np.mean(temps)}")
-# print(f"Standard deviation: {np.std(temps)}")
-# print(f"Max value: {np.max(temps)}")
-# print(f"Min value: {np.min(temps)}")
-# print(f"Median: {np.median(temps)}")
-# print(f"Kurtosis: {kurtosis(temps)}")
+print(f"Mean: {np.mean(temps)}")
+print(f"Standard deviation: {np.std(temps)}")
+print(f"Max value: {np.max(temps)}")
+print(f"Min value: {np.min(temps)}")
+print(f"Median: {np.median(temps)}")
+print(f"Kurtosis: {kurtosis(temps)}")
 
 
 # zadanie 2
@@ -28,9 +28,9 @@ for i in range(n):
 # for i in range(n):
 #     temps[i] = random.randint(-5, 20)
 
-# print(f"Entropy: {nolds.sampen(temps)}")
-# print(f"Fractal dimension: {nolds.corr_dim(temps, emb_dim=1)}")
-# print(f"Hurst exponent: {nolds.hurst_rs(temps)}")
+print(f"Entropy: {nolds.sampen(temps)}")
+print(f"Fractal dimension: {nolds.corr_dim(temps, emb_dim=2)}")
+print(f"Hurst exponent: {nolds.hurst_rs(temps)}")
 
 # zadanie 3
 def calc_in_sliding_window(data, func, h):
@@ -84,9 +84,9 @@ standarized_mean = calc_in_sliding_window_standarize_normalize(temps, np.std, h,
 non_standarized_mean = calc_in_sliding_window(temps, np.std, h)
 plt.xticks(rotation=30, ha='right')
 ax[0].plot(series[:28], np.array(non_standarized_mean).reshape(-1, 1))
-ax[0].set_title("Standarized")
+ax[0].set_title("Non-standarized")
 ax[1].plot(series[:28], np.array(standarized_mean).reshape(-1, 1))
-ax[1].set_title("Non-standarized")
+ax[1].set_title("Standarized")
 plt.tight_layout()
 plt.show()
 
